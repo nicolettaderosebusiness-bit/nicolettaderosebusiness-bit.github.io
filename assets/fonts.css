@@ -1,0 +1,15 @@
+@font-face {
+  font-family: "Archivo";
+  font-style: normal;
+  font-weight: 300 600;
+  font-display: swap;
+  src: url("fonts/archivo-latin.woff2") format("woff2");
+}
+
+@font-face {
+  font-family: "Public Sans";
+  font-style: normal;
+  font-weight: 400 600;
+  font-display: swap;
+  src: url("fonts/public-sans-latin.woff2") format("woff2");
+}

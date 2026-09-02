@@ -1,0 +1,184 @@
+.live-chat {
+  --chat-red: #b52f29;
+  --chat-graphite: #17191a;
+  --chat-paper: #fbfaf7;
+  position: fixed;
+  right: max(1rem, env(safe-area-inset-right));
+  bottom: max(1rem, env(safe-area-inset-bottom));
+  z-index: 880;
+  display: grid;
+  justify-items: end;
+  gap: .7rem;
+  font-family: "Public Sans", Arial, sans-serif;
+}
+
+.live-chat__launcher {
+  min-height: 3.35rem;
+  padding: .78rem 1rem .78rem .82rem;
+  display: inline-flex;
+  align-items: center;
+  gap: .72rem;
+  color: #fff;
+  background: rgba(23, 25, 26, .96);
+  border: 1px solid rgba(255, 255, 255, .22);
+  border-radius: 0;
+  box-shadow: 0 16px 42px rgba(0, 0, 0, .2);
+  cursor: pointer;
+  font: inherit;
+  font-size: .72rem;
+  font-weight: 650;
+  line-height: 1.2;
+  letter-spacing: .075em;
+  text-transform: uppercase;
+  transition: transform .25s ease, background .25s ease, border-color .25s ease;
+}
+
+.live-chat__launcher::before {
+  content: "";
+  width: .24rem;
+  align-self: stretch;
+  background: var(--chat-red);
+}
+
+.live-chat__launcher:hover {
+  transform: translateY(-2px);
+  background: #0e1011;
+  border-color: rgba(255, 255, 255, .4);
+}
+
+.live-chat__launcher-icon {
+  width: 1.15rem;
+  height: 1.15rem;
+  flex: 0 0 auto;
+}
+
+.live-chat__panel {
+  width: min(24rem, calc(100vw - 2rem));
+  padding: 1.45rem;
+  color: var(--chat-graphite);
+  background: rgba(251, 250, 247, .98);
+  border: 1px solid rgba(23, 25, 26, .22);
+  box-shadow: 0 24px 70px rgba(0, 0, 0, .24);
+  backdrop-filter: blur(16px);
+}
+
+.live-chat__panel[hidden] { display: none; }
+
+.live-chat__topline {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  margin-bottom: 1.5rem;
+}
+
+.live-chat__eyebrow {
+  margin: 0;
+  color: #626566;
+  font-size: .64rem;
+  font-weight: 650;
+  line-height: 1.2;
+  letter-spacing: .17em;
+  text-transform: uppercase;
+}
+
+.live-chat__close {
+  width: 2.35rem;
+  height: 2.35rem;
+  display: grid;
+  place-items: center;
+  padding: 0;
+  color: inherit;
+  background: transparent;
+  border: 1px solid rgba(23, 25, 26, .2);
+  cursor: pointer;
+  font: inherit;
+  font-size: 1.1rem;
+}
+
+.live-chat__title {
+  max-width: 12ch;
+  margin: 0 0 .8rem;
+  font-family: "Archivo", Arial, sans-serif;
+  font-size: clamp(1.85rem, 5vw, 2.45rem);
+  font-weight: 650;
+  line-height: .98;
+  letter-spacing: -.045em;
+}
+
+.live-chat__copy {
+  max-width: 29rem;
+  margin: 0 0 1.45rem;
+  color: #55595a;
+  font-size: .92rem;
+  line-height: 1.55;
+}
+
+.live-chat__action {
+  min-height: 3.2rem;
+  width: 100%;
+  padding: .82rem 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  color: #fff;
+  background: var(--chat-red);
+  border: 1px solid var(--chat-red);
+  font: inherit;
+  font-size: .72rem;
+  font-weight: 650;
+  letter-spacing: .1em;
+  text-decoration: none;
+  text-transform: uppercase;
+  transition: color .25s ease, background .25s ease;
+}
+
+.live-chat__action:not([aria-disabled="true"]):hover {
+  color: var(--chat-red);
+  background: transparent;
+}
+
+.live-chat__action[aria-disabled="true"] {
+  color: #777a7a;
+  background: #e9e7e2;
+  border-color: #d4d1ca;
+  cursor: not-allowed;
+}
+
+.live-chat__disclosure {
+  margin: 1rem 0 0;
+  color: #747777;
+  font-size: .7rem;
+  line-height: 1.5;
+}
+
+.live-chat__disclosure a { text-decoration: underline; text-underline-offset: .16em; }
+
+@media (max-width: 620px) {
+  .live-chat {
+    right: max(.75rem, env(safe-area-inset-right));
+    bottom: max(.75rem, env(safe-area-inset-bottom));
+  }
+
+  .live-chat__launcher {
+    width: min(20rem, calc(100vw - 1.5rem));
+    max-width: calc(100vw - 1.5rem);
+    min-height: 3.05rem;
+    padding: .7rem .85rem .7rem .7rem;
+    font-size: .64rem;
+  }
+
+  .live-chat__launcher span { min-width: 0; overflow-wrap: anywhere; }
+
+  .live-chat__panel {
+    width: calc(100vw - 1.5rem);
+    padding: 1.2rem;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .live-chat__launcher, .live-chat__action { transition: none; }
+}
+
+@media print { .live-chat { display: none !important; } }
