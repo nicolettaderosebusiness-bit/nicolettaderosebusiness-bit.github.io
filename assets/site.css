@@ -280,6 +280,17 @@ button, input, textarea, select { font: inherit; }
 .split-copy .title + .body-copy { margin-top: 2rem; }
 .split-copy .lede + .text-link,
 .split-copy .body-copy + .text-link { margin-top: 2rem; }
+.fsc-promo {
+  width: min(28rem, 100%);
+  margin-top: clamp(2.25rem, 4vw, 3.5rem);
+  padding: clamp(1.15rem, 2.4vw, 1.8rem);
+  border: 1px solid var(--line);
+  background: #fff;
+}
+.fsc-promo img {
+  width: 100%;
+  height: auto;
+}
 
 .metric-grid { display: grid; grid-template-columns: repeat(4, 1fr); border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); }
 .metric { min-height: 16rem; padding: 2rem; border-right: 1px solid var(--line); display: grid; align-content: space-between; }
