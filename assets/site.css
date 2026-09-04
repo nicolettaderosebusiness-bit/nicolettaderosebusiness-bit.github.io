@@ -281,16 +281,16 @@ button, input, textarea, select { font: inherit; }
 .split-copy .lede + .text-link,
 .split-copy .body-copy + .text-link { margin-top: 2rem; }
 .fsc-feature-mark {
-  min-height: 34rem;
+  min-height: 28rem;
   display: grid;
   place-items: center;
-  padding: clamp(3rem, 7vw, 6.5rem);
+  padding: clamp(2.5rem, 6vw, 5rem);
   background: var(--paper);
 }
-.fsc-feature-mark img { width: min(14rem, 100%); height: auto; }
+.fsc-feature-mark img { width: min(11.5rem, 100%); height: auto; }
 .association-feature {
   display: grid;
-  grid-template-columns: minmax(0, .82fr) minmax(22rem, 1.18fr);
+  grid-template-columns: repeat(2, minmax(0, 1fr));
   align-items: center;
   gap: clamp(3rem, 8vw, 8rem);
   margin-bottom: clamp(4rem, 7vw, 6rem);
@@ -298,8 +298,8 @@ button, input, textarea, select { font: inherit; }
 .association-copy { max-width: 42rem; }
 .association-copy .eyebrow + .title { margin-top: var(--eyebrow-title-gap); }
 .association-copy .title + .lede { margin-top: 1.7rem; }
-.association-media { min-height: 31rem; margin: 0; overflow: hidden; }
-.association-media img { width: 100%; height: 100%; min-height: 31rem; object-fit: cover; object-position: center 62%; }
+.association-media { width: 100%; max-width: 40rem; min-height: 24rem; margin: 0; justify-self: end; overflow: hidden; }
+.association-media img { width: 100%; height: 100%; min-height: 24rem; object-fit: cover; object-position: center 62%; }
 
 .metric-grid { display: grid; grid-template-columns: repeat(4, 1fr); border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); }
 .metric { min-height: 16rem; padding: 2rem; border-right: 1px solid var(--line); display: grid; align-content: space-between; }
